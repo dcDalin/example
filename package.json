@@ -1,9 +1,10 @@
 {
-  "name": "Example",
+  "name": "example",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon --exec babel-node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,5 +17,14 @@
   "bugs": {
     "url": "https://github.com/dcDalin/example/issues"
   },
-  "homepage": "https://github.com/dcDalin/example#readme"
+  "homepage": "https://github.com/dcDalin/example#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.0",
+    "@babel/node": "^7.5.0",
+    "@babel/preset-env": "^7.5.0",
+    "nodemon": "^1.19.1"
+  }
 }
