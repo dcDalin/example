@@ -1,12 +1,21 @@
-/* eslint-disable no-undef */
-import { expect } from 'chai';
-
-describe('true or false', () => {
-  it('true is true', () => {
-    expect(true).to.eql(true);
-  });
-
-  it('false is false', () => {
-    expect(false).to.eql(false);
+import chai from "chai";
+import chaiHttp from "chai-http";
+import app from "../src/index";
+// Configure chai
+chai.use(chaiHttp);
+chai.should();
+describe("Students", () => {
+  describe("GET /", () => {
+    // Test to get all students record
+    it("should get all students record", done => {
+      chai
+        .request(app)
+        .get("/api/v1/auth/signup")
+        .end((err, res) => {
+          res.should.have.status(200);
+          res.body.should.be.a("object");
+          done();
+        });
+    });
   });
 });
